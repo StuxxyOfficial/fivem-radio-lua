@@ -4,11 +4,11 @@ local index = -1
 local volume = GetProfileSetting(306) / 10
 local previousVolume = volume
 
-local length = GetNumResourceMetadata("OT_customradio", "supersede_radio")
+local length = GetNumResourceMetadata("fivem-radio-lua", "supersede_radio")
 
 for i = 0, length do
-    local radiodata = GetResourceMetadata("OT_customradio", "supersede_radio", i)
-    local data = json.encode(GetResourceMetadata("OT_customradio", "supersede_radio_extra", i))
+    local radiodata = GetResourceMetadata("fivem-radio-lua", "supersede_radio", i)
+    local data = json.encode(GetResourceMetadata("fivem-radio-lua", "supersede_radio_extra", i))
     if data ~= nil then
         table.insert(customRadios, {
             isPlaying = false,

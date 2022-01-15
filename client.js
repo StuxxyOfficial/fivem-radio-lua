@@ -3,9 +3,10 @@ let isPlaying = false;
 let index = -1;
 let volume = GetProfileSetting(306) / 10;
 let previousVolume = volume;
+let resourcename = GetCurrentResourceName();
 
-for (let i = 0, length = GetNumResourceMetadata("fivem-radio-lua", "supersede_radio"); i < length; i++) {
-    const radio = GetResourceMetadata("fivem-radio-lua", "supersede_radio", i);
+for (let i = 0, length = GetNumResourceMetadata(resourcename, "supersede_radio"); i < length; i++) {
+    const radio = GetResourceMetadata(resourcename, "supersede_radio", i);
 
     if (!availableRadios.includes(radio)) {
         console.error(`radio: ${radio} is an invalid radio.`);
@@ -13,7 +14,7 @@ for (let i = 0, length = GetNumResourceMetadata("fivem-radio-lua", "supersede_ra
     }
 
     try {
-        const data = JSON.parse(GetResourceMetadata("fivem-radio-lua", "supersede_radio_extra", i));
+        const data = JSON.parse(GetResourceMetadata(resourcename, "supersede_radio_extra", i));
         if (data !== null) {
             customRadios.push({
                 "isPlaying": false,

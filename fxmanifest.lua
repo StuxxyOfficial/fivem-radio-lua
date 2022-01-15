@@ -1,5 +1,6 @@
 fx_version 'adamant'
 game 'gta5'
+this_is_a_map 'yes'
 
 supersede_radio "RADIO_01_CLASS_ROCK" { url = "https://stream.live.vc.bbcmedia.co.uk/bbc_radio_one", volume = 0.2, name = "BBC radio 1" }
 supersede_radio "RADIO_02_POP" { url = "https://media-ssl.musicradio.com/SmoothLondonMP3", volume = 0.2, name = "Smooth Radio" }

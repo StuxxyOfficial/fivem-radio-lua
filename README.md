@@ -1,7 +1,8 @@
-# FiveM Radio
+# FiveM Radio Luafied
+Credits to Hellslicer for original code.
 
 This resource allows you to integrate your own radios in place of the original radios.
-It's fully written in JavaScript and uses resource metadata for its configuration.
+It's written mainly in Lua and JavaScript and uses resource metadata for its configuration.
 
 ## Features
 
@@ -19,7 +20,7 @@ Video showing Los Santos Rock Radio replaced by a WebRadio and Non-Stop-Pop FM r
 
 ## Known bugs and limitations
 
-* No MPEG or AAC support as CEF only supports open formats
+* No MPEG or AAC support as CEF only supports open formats (not sure on this one)
 
 ## Configuration
 

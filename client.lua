@@ -53,6 +53,7 @@ function ToggleCustomRadioBehavior()
     end
 end
 
+
 Citizen.CreateThread(function()
     while true do
 	    Wait(50)
@@ -88,6 +89,7 @@ Citizen.CreateThread(function()
             end
         elseif not IsPedInAnyVehicle(PlayerPedId()) then
             StopCustomRadios()
+			Wait(200)
         end
     end
 end)

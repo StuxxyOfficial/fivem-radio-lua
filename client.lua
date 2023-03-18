@@ -54,11 +54,13 @@ function ToggleCustomRadioBehavior()
 end
 
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
-	    Wait(50)
-        if IsPedInAnyVehicle(PlayerPedId()) then
-            if IsPlayerVehicleRadioEnabled() then
+    local ped = PlayerPedId()
+	local sleep = 800
+        if IsPedInAnyVehicle(ped) then
+            sleep = 200
+            if IsPlayerVehRadioEnable() then
                 local playerRadioStationName = GetPlayerRadioStationName()
                 for k, v in pairs(customRadios) do
                     if v.name == playerRadioStationName then
@@ -76,7 +78,7 @@ Citizen.CreateThread(function()
             elseif isPlaying then
                 StopCustomRadios()
             end
-            if GetPlayerRadioStationName() == nil then
+            if GetPlayerRadioStationName() ~= customRadio then
                 StopCustomRadios()
             end
             volume = GetProfileSetting(306) / 10
@@ -87,10 +89,10 @@ Citizen.CreateThread(function()
                 }))
                 previousVolume = volume
             end
-        elseif not IsPedInAnyVehicle(PlayerPedId()) then
+        elseif not IsPedInAnyVehicle(ped) then
             StopCustomRadios()
-			Wait(200)
+	    sleep = 800
         end
+    Wait(sleep)
     end
 end)
-
